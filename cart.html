@@ -1,0 +1,301 @@
+<!--
+    Donglin lao
+    CS 545 Fall 2016
+    Project 4
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" 
+        content="text/html;charset=utf-8" />  
+    <title>Check Out</title>
+
+    <link rel="stylesheet" type="text/css" href="proj4.css" />
+       <link rel="stylesheet" type="text/css" 
+    href="jquery-ui-1.10.2.custom/css/custom-theme/jquery-ui-1.10.2.custom.min.css" />  
+
+   <script type="text/javascript" src="/jquery/jquery.js"></script>
+    <script type="text/javascript" src="jquery-ui-1.10.2.custom/js/jquery-ui-1.10.2.custom.min.js"></script>   
+ 
+    <script type="text/javascript" src="shopping_cart.js"></script>
+ 
+    <script type="text/javascript" src="cart.js"></script>
+    <script type="text/javascript" src="form.js"></script> 
+</head>
+
+<body>
+        <div class="wrapper">
+            <div id="header">
+                <h1>Bertha's Deluxe Chocolates</h1>
+                
+                
+
+                <div id="menu">
+                    <ul>
+                    <li> <a href="index.html">Home</a></li>
+                    <li> <a href="products.html">Products</a></li>
+                    <li> <a href="cart.html">Order Online</a></li>
+                    <li> <a href="about.html">About us</a></li>
+                    <li> <a href="contact.html">Contact us</a></li>
+                    <li> <img src="images/shopping_cart.png" width=20px alt="cart" id="shopping_cart"/>
+                         <a href="cart.html" class="cart">Cart: <span id="count"></span></a>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+    
+    <div class="intro">    
+        <div id="cartTable"></div>
+        
+        <input type="button" value="Order Now" id="order_button"/>
+	</div>
+    </div>  
+
+
+
+<!-- The order form is not visible until the Order Now button is clicked -->
+
+<div id="dialog-modal" class="widget-dialog-container" title="Complete Your Order">
+<form method="post" action="/perl/jadrn021/proj4/read_cookie.cgi">   
+
+<fieldset> <legend>Billing Address </legend>
+
+
+<table id = "formTable">
+       <tr>
+        <td>First Name:</td>
+        <td><input type="text" name="fname1" size="20" /></td>
+    </tr>
+	<tr>
+        <td>Last Name:</td>
+        <td><input type="text" name="lname1" size="20" /></td>
+    </tr>
+
+    <tr>
+        <td>Address:</td>
+        <td><input type="text" name="address1" size="20" /></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="text" name="address2" size="20" /></td>
+    </tr>
+    <tr>
+        <td>City:</td>
+        <td><input type="text" name="city1" size="20" /></td>
+    </tr>
+    <tr>
+        <td>State:</td>
+        <td> <select name ="state1">
+                <option value ="" selected>Select State</option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+                <option value="CO">Colorado</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="HI">Hawaii</option>
+                <option value="ID">Idaho</option>
+                <option value="IL">Illinois</option>
+                <option value="IN">Indiana</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NV">Nevada</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NM">New Mexico</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="ND">North Dakota</option>
+                <option value="OH">Ohio</option>
+                <option value="OK">Oklahoma</option>
+                <option value="OR">Oregon</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="SD">South Dakota</option>
+                <option value="TN">Tennessee</option>
+                <option value="TX">Texas</option>
+                <option value="UT">Utah</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WA">Washington</option>
+                <option value="WV">West Virginia</option>
+                <option value="WI">Wisconsin</option>
+                <option value="WY">Wyoming</option>
+                <option value="NO">NON-US</option>
+            </select></td>
+    </tr>
+    <tr>
+        <td>Zipcode:</td>
+        <td><input type="text" name="zip1" size="9" /></td>
+    </tr>
+    <tr>
+        <td>Phone:</td>
+         <td>
+	    <input type="text" name="area_phone1" size="3" maxlength="3" placeholder="xxx" /> 
+            <input type="text" name="prefix_phone1" size="3" maxlength="3" placeholder="xxx" />
+            <input type="text" name="phone1" size="4" maxlength="4" placeholder="xxxx" /><br />
+	</td>    
+    </tr>
+   </table>
+</fieldset><br/>
+
+  <fieldset> <legend> Shipping Address </legend>
+	
+	Same as Billing address
+	<input type="checkbox" name="samecheckbox"></br>
+	
+	<table id ="formTable2">	
+    <tr>
+        <td>First Name:</td>
+        <td><input type="text" name="fname2" size="20" /></td>
+    </tr>
+	<tr>
+        <td>Last Name:</td>
+        <td><input type="text" name="lname2" size="20" /></td>
+    </tr>
+
+    <tr>
+        <td>Address:</td>
+        <td><input type="text" name="address3" size="20" /></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="text" name="address4" size="20" /></td>
+    </tr>
+    <tr>
+        <td>City:</td>
+        <td><input type="text" name="city2" size="20" /></td>
+    </tr>
+    <tr>
+	<td>State:</td>
+
+           <td> <select name ="state2">
+                <option value ="" selected>Select State</option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+                <option value="CO">Colorado</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="HI">Hawaii</option>
+                <option value="ID">Idaho</option>
+                <option value="IL">Illinois</option>
+                <option value="IN">Indiana</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NV">Nevada</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NM">New Mexico</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="ND">North Dakota</option>
+                <option value="OH">Ohio</option>
+                <option value="OK">Oklahoma</option>
+                <option value="OR">Oregon</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="SD">South Dakota</option>
+                <option value="TN">Tennessee</option>
+                <option value="TX">Texas</option>
+                <option value="UT">Utah</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WA">Washington</option>
+                <option value="WV">West Virginia</option>
+                <option value="WI">Wisconsin</option>
+                <option value="WY">Wyoming</option>
+                <option value="NO">NON-US</option>
+            </select></td>    </tr>
+    <tr>
+        <td>Zip:</td>
+        <td><input type="text" name="zip2" size="9" /></td>
+    </tr>
+    <tr>
+        <td>Phone:</td>
+        <td>
+	    <input type="text" name="area_phone2" size="3" maxlength="3" placeholder="xxx" /> 
+            <input type="text" name="prefix_phone2" size="3" maxlength="3" placeholder="xxx" />
+            <input type="text" name="phone2" size="4" maxlength="4" placeholder="xxxx" /><br />
+	</td>
+    </tr>
+</table>
+</fieldset></br>
+
+<fieldset> <legend> Payment Info </legend>
+
+<table id ="formTable3">	
+       <tr>
+        <td>Card:</td>
+        <td>
+          <select name="cardtype">
+           <option value="default"></option>
+           <option value="Visa">Visa</option>
+           <option value="Mastercard">Mastercard</option>
+           <option value="Discover">Discover</option>
+           <option value="AmericanExpress">American Express</option>
+          </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Card Number:</td>
+        <td><input type="text" name="cardnumber" size="24" /></td>
+    </tr>
+    <tr>
+        <td>Exp:</td>
+        <td><input type="text" name="mon" size="2" maxlength="2" placeholder="MM"/> / <input type="text" name="year" size="2" maxlength="2" placeholder="YY" /></td>
+
+    </tr>
+ 
+    <tr>
+        <td><input type="reset" /></td>
+        <td><input type="submit" onclick="" class="ui-button" value="Submit Order"/></td>
+    </tr>
+
+
+</table>
+
+ <span id="error"></span>
+</fieldset>
+</form>       
+</div> 
+           	    
+</div>
+
+
+</body>
+
+</html>

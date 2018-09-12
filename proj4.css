@@ -1,0 +1,206 @@
+/*  Donglin Lao
+    Account: jadrn021
+    CS545, Fall 2016
+    Project #4
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body { 
+    height: 100%;
+}
+
+
+.wrapper {
+    background-color: gainsboro;
+    min-width: 1300px; 
+    max-width: 1300px;
+    margin: auto;
+  
+    position: relative;
+    border: 3px solid black;
+    padding:20px;
+   
+}
+
+.buy{
+	margin-bottom: 15px;
+}
+
+.span{
+	display:none;
+	color: red;
+	font-family: “Helvetica Neue”, Helvetica, Arial, sans-serif;
+	font-style: italic;	
+}
+
+table{
+   margin auto;
+
+}
+
+table tr td, table tr th {
+    text-align: left;
+    padding-right: 20px;
+}
+
+.displayCandy{
+	display: block;
+    margin-left:100px;
+	display: inline;
+}
+#content{
+
+    margin: auto;
+    text-align:center;
+    min-width: 1200px; 
+    max-width: 1200px;
+    
+}
+
+
+.footer {
+    padding:20px;
+    background-color: #D3D3D3;
+    text-align: center;
+    margin: 25px;
+	border: 1px solid black;	
+}
+
+#menu{
+  
+    margin: auto;
+    border: 3px solid black;
+    text-align:center;
+    min-width: 1200px; 
+    max-width: 1200px;
+    background:black;
+}
+
+#menu li a {
+    text-decoration:none;
+    margin:0;
+    color: white;
+    font-weight: bold;
+    padding-left:5px;
+} 
+
+#menu li a:hover {
+    background-color: white;
+    color: black;
+}
+
+#menu ul {
+   list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+#menu li {
+    display: inline;
+    font: 25px Helvetica, sans-serif;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+div.intro{
+	 margin: auto;
+    text-align: center;
+}
+
+img#store{
+	padding: auto;
+	display: block;
+    margin: auto;
+
+}
+
+h1{
+    padding: 20px;
+    text-align: center;
+    display: block;
+    width: 100%;
+    font: 100px Helvetica, sans-serif;
+    color: #2b2b2b;
+    text-shadow: 4px 4px 0px rgba(0,0,0,0.1); 
+}
+
+h2{
+	padding: 20px;
+    text-align: center;
+    display: block;
+    width: 100%;
+    font:  50px Helvetica, sans-serif;
+    color: #2b2b2b;
+    text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0,0,0,0.15);
+}
+
+
+ 
+#item_list{
+	margin: auto;
+    border: 3px solid black;
+    text-align:center;
+    min-width: 1200px; 
+    max-width: 1200px;
+    
+}   
+#item_list li{
+
+    background-color: #FF5733;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+
+}
+
+
+#cartTable {
+    align: center;
+    margin-left: auto;
+    margin-right: auto;
+    }    
+    
+#cartTable.th,td {
+    background-color: white;
+    padding: 5px 20px 5px 20px;
+	border: solid black 1px;
+    }
+   
+#itemTable, #priceTable, #confirmTable{
+	 margin: 0px auto;
+}
+
+#order_button{
+    position: relative;
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#formTable,#formTable2,#formTable3{
+	 margin: 0px auto;
+}
+
+fieldset {
+	min-width: 600px; 
+   	 max-width: 600px;
+	margin: 0 auto;
+	background-color: #D2D2D2;
+	}

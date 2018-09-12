@@ -1,0 +1,69 @@
+<!--
+    Donglin lao
+    CS 545 Fall 2016
+    Project 4
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" 
+        content="text/html;charset=utf-8" />  
+    <title>Products Us</title>
+
+    <link rel="stylesheet" type="text/css" href="proj4.css" />
+    
+    <script type="text/javascript" src="/jquery/jquery.js"></script>
+    <script type="text/javascript" src="shopping_cart.js"></script>
+    <script type="text/javascript" src="ajax_get_lib.js"></script>
+    <script type="text/javascript" src="ajax_populate_page.js"></script>
+</head>
+
+<body>
+        <div class="wrapper">
+            <div id="header">
+                <h1>Bertha's Deluxe Chocolates</h1>
+                
+                
+
+                <div id="menu">
+                    <ul>
+                    <li> <a href="index.html">Home</a></li>
+                    <li> <a href="products.html">Products</a></li>
+                    <li> <a href="cart.html">Order Online</a></li>
+                    <li> <a href="about.html">About us</a></li>
+                    <li> <a href="contact.html">Contact us</a></li>
+                    <li> <img src="images/shopping_cart.png" width=20px alt="cart" id="shopping_cart"/>
+                         <a href="cart.html" class="cart">Cart: <span id="count"></span></a>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+
+          <div id="item_list">       
+                <ul>
+                    <li  class="button" href="" id="milk" onclick="display_milk_chocolate()" > <a > Milk chocolate  </a> </li>
+                    <li  class="button" href="" id="dark" > <a > Dark Chocolate  </a> </li>
+                    <li  class="button" href="" id="nuts" > <a > Nuts and Chews  </a> </li>
+                    <li  class="button" href="" id="brittle" > <a > Brittles and Toffies  </a> </li>
+                    <li  class="button" href="" id="truffles" > <a > Truffles  </a> </li>
+                    <li  class="button" href="" id="gifts" > <a > Gifts  </a> </li>
+                    <li  class="button" href="" id="assortments" > <a > Holiday assortments  </a> </li>
+
+                </ul>
+    
+        </div>
+
+        <div id="content"> 
+        
+    
+   
+        </div>
+
+            
+   	    
+    </div>
+
+</body>
+
+</html>
